@@ -70,7 +70,7 @@ async function sendThreeAstroMessages(userPhone) {
     console.log('📤 Message 1/3...');
     await sendNetcoreMessage(
       userPhone,
-      '🔍 Jyotish Premanand ji ki availability check ho rahi hai…'
+      'Jyotish Bageshwar baba ji ki availability check ho rahi hai…'
     );
     await sleep(2000);
 
@@ -78,7 +78,7 @@ async function sendThreeAstroMessages(userPhone) {
     console.log('📤 Message 2/3...');
     await sendNetcoreMessage(
       userPhone,
-      '⏳ Woh abhi kisi aur vyakti ke saath busy hain. Jaise hi free honge, aapko turant update milega.'
+      ' Woh abhi kisi aur vyakti ke saath busy hain. Jaise hi free honge, aapko turant update milega.'
     );
     await sleep(5000);
 
@@ -111,6 +111,21 @@ async function sendNetcoreMessage(to, text) {
           message_type: 'text',
           source: NETCORE_SOURCE,
           'x-apiheader': 'astro_automation',
+          type_media_template: {
+        "type": "text",
+        "button": [
+          {
+            "index": "0",
+            "payload": "Want to know more about your love life?",
+            "sub_type": "quick_reply"
+          },
+          {
+            "index": "1",
+            "payload": "Want to know more about your career?",
+            "sub_type": "quick_reply"
+          }
+        ]
+      },
           type_text: [
             {
               preview_url: 'false',
